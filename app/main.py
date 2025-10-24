@@ -277,15 +277,15 @@ def main():
                            mime="text/csv")
 
     st.caption("Set SUPABASE_URL, SUPABASE_ANON_KEY, BUCKET_NAME (and optional BUCKET_PREFIX) in Streamlit secrets.")
-    with st.expander("ℹ️ Storage policy help"):
-        st.code(\"\"\"-- Make bucket public (easiest MVP): toggle Public in Storage settings
+  with st.expander("ℹ️ Storage policy help"):
+    st.code("""-- Make bucket public (easiest MVP): toggle Public in Storage settings
 -- OR add a policy for reads (if bucket is private):
 create policy if not exists "list vendor inquiries (anon)"
 on storage.objects for select
 to anon
 using (bucket_id = 'vendor-inquiries');
 -- or change 'to anon' -> 'to authenticated' for signed-in clients.
-\"\"\", language="sql")
+""", language="sql")
 
 if __name__ == "__main__":
     main()
