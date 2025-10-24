@@ -1,0 +1,5 @@
+streamlit
+supabase
+pdfplumber
+beautifulsoup4
+pandas
